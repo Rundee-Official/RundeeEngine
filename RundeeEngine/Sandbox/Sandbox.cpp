@@ -6,7 +6,7 @@
 
 #include "RundeeEngine/Renderer/Renderer.h"
 #include "RundeeEngine/Logger.h"
-#include <SDL3/SDL.h>
+#include <SDL.h>
 
 int main() {
     RundeeEngine::Logger::Info("Starting RundeeEngine...");
@@ -19,7 +19,7 @@ int main() {
 
     while (running) {
         while (SDL_PollEvent(&event)) {
-            if (event.type == SDL_EVENT_QUIT)
+            if (event.type == SDL_QUIT)
                 running = false;
         }
 
