@@ -18,6 +18,12 @@
     <Filter Include="Source Files\_glad">
       <UniqueIdentifier>{97375b42-eebb-47ab-a599-f339b8126db4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Common">
+      <UniqueIdentifier>{6c498f93-abd1-4ee3-aecc-06b638b09cbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Common">
+      <UniqueIdentifier>{2e220c4b-d68e-4412-95d0-4077133ad61c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\RundeeEngine\ThreadPool.h">
@@ -31,6 +37,9 @@
     </ClInclude>
     <ClInclude Include="include\RundeeEngine\Renderer\Renderer.h">
       <Filter>Header Files\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RundeeEngine\Common\CommonType.h">
+      <Filter>Header Files\Common</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -48,6 +57,9 @@
     </ClCompile>
     <ClCompile Include="..\ThirdParty\glad\src\glad.c">
       <Filter>Source Files\_glad</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Common\CommonType.cpp">
+      <Filter>Source Files\Common</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

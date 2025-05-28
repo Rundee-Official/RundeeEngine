@@ -8,6 +8,7 @@
 #include <glad/glad.h>
 #include <SDL.h>
 
+#include "../../include/RundeeEngine/Common/CommonType.h"
 #include "../../include/RundeeEngine/Renderer/Renderer.h"
 #include "../../include/RundeeEngine/Logger.h"
 
@@ -25,7 +26,7 @@ namespace RundeeEngine
         }
 
         g_Window = SDL_CreateWindow("RundeeEngine", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-            1920, 1080, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
+            1600, 900, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
         if (!g_Window) 
         {
             Logger::Error("SDL_CreateWindow failed: " + std::string(SDL_GetError()));
@@ -71,4 +72,27 @@ namespace RundeeEngine
     {
         SDL_GL_SwapWindow(g_Window);
     }
+
+	void Renderer::DrawTriangle(Vec2 a, Vec2 b, Vec3 c)
+	{
+		glBegin(GL_TRIANGLES);
+		glColor3f(1.0f, 0.0f, 0.0f);
+		glVertex2f(a.x, a.y);
+        glColor3f(0.0f, 1.0f, 0.0f);
+		glVertex2f(b.x, b.y);
+		glColor3f(0.0f, 0.0f, 1.0f);
+		glVertex2f(c.x, c.y);
+		glEnd();
+	}
+
+	void Renderer::DrawRect(Vec2 position, float width, float height, float r, float g, float b, float a)
+	{
+		glBegin(GL_QUADS);
+        glColor4f(r, g, b, a);
+		glVertex2f(position.x, position.y);
+		glVertex2f(position.x + width, position.y);
+		glVertex2f(position.x + width, position.y + height);
+		glVertex2f(position.x, position.y + height);
+		glEnd();
+	}
 }
