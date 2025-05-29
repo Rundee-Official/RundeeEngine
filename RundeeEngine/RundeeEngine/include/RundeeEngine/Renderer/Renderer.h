@@ -19,5 +19,10 @@ namespace RundeeEngine {
 
         static void DrawTriangle(Vec2 a, Vec2 b, Vec3 c);
 		static void DrawRect(Vec2 position, float width, float height, float r, float g, float b, float a);
+		static void DrawLine(Vec2 start, Vec2 end, float r, float g, float b, float a);
+		static void DrawCircle(Vec2 center, float radius, int segments, float r, float g, float b, float a);
+		static void DrawText(const char* text, Vec2 position, float size, float r, float g, float b, float a);
+		static void SetViewport(int x, int y, int width, int height);
+		static void SetClearColor(float r, float g, float b, float a);
     };
 }

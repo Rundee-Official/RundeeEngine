@@ -95,4 +95,45 @@ namespace RundeeEngine
 		glVertex2f(position.x, position.y + height);
 		glEnd();
 	}
+
+	void Renderer::DrawLine(Vec2 start, Vec2 end, float r, float g, float b, float a)
+	{
+		glBegin(GL_LINES);
+		glColor4f(r, g, b, a);
+		glVertex2f(start.x, start.y);
+		glVertex2f(end.x, end.y);
+		glEnd();
+	}
+
+	void Renderer::DrawCircle(Vec2 center, float radius, int segments, float r, float g, float b, float a)
+	{
+		glBegin(GL_LINE_LOOP);
+		glColor4f(r, g, b, a);
+		for (int i = 0; i < segments; ++i)
+		{
+			float angle = 2.0f * 3.1415926f * i / segments;
+			float x = center.x + cos(angle) * radius;
+			float y = center.y + sin(angle) * radius;
+			glVertex2f(x, y);
+		}
+		glEnd();
+	}
+
+	void Renderer::DrawText(const char* text, Vec2 position, float size, float r, float g, float b, float a)
+	{
+		// Placeholder for text rendering logic
+		// This would typically involve using a library like FreeType or SDL_ttf
+
+		Logger::Warning("DrawText is not implemented yet.");
+	}
+
+	void Renderer::SetViewport(int x, int y, int width, int height)
+	{
+		glViewport(x, y, width, height);
+	}
+
+	void Renderer::SetClearColor(float r, float g, float b, float a)
+	{
+		glClearColor(r, g, b, a);
+	}
 }
