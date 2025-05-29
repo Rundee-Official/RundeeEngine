@@ -39,3 +39,11 @@ Thumbs.db
 
 *.log
 *.tmp
+
+# .vs files
+/RundeeEngine/.vs
+
+# Builded files
+/RundeeEngine/x64
+/RundeeEngine/RundeeEngine/x64
+/RundeeEngine/Sandbox/x64
