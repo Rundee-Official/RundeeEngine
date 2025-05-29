@@ -1,3 +1,9 @@
+# Project Name: RundeeEngine
+# File Name: .gitignore
+# Author: Haneul Lee
+# Date: 2025.05.30
+# Description: .gitignore file to manage unnecessary files when commit
+
 # Prerequisites
 *.d
 
